@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 50%;
+            border: 2px solid black;
+            border-radius: 15px 50px;
+            margin: 30px auto;
+            background-color: #2A546C;
+            color: white;
+
+        }
+
+        form {
+            padding: 10px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        #result {
+            color: #00C2F1;
+            font-family: monospace;
+        }
+
+        body {
+
+            background-color: #F7F7F7;
+        }
+
+        button {
+            background-color: yellow;
+
+            border: 1px solid yellow;
+        }
+
+        button:hover {
+            cursor: pointer;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .main {
+                width: 90%;
+            }
+        }
+
+        body:hover {
+            background-color: #61B5D1;
+
+
+
+        }
+
+        .main:hover {
+            border: 2px solid white;
+            font-weight: bolder;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>TEMPERATURE APP</h1>
+        <form action="" onsubmit="checkcondition(event)">
+            <label for="temp">Temperature</label> <br> <br>
+            <input type="number" id="temp" required>
+
+            <button>check</button>
+        </form>
+
+
+        <h1 id="result"></h1>
+
+    </div>
+
+    <script>
+        function checkcondition(event) {
+            let temp = document.querySelector("#temp").value;
+            event.preventDefault();
+
+            if (temp > 30) {
+                document.querySelector("#result").innerHTML = "its too hot";
+            }
+
+            else if (temp > 25) {
+                document.querySelector("#result").innerHTML = "its pleasent outside";
+            }
+
+            else if (temp > 20) {
+                document.querySelector("#result").innerHTML = "wear jacket while riding a bike";
+            }
+
+            else if (temp > 10) {
+                document.querySelector("#result").innerHTML = "wear jacket and gloves while riding a bike";
+            }
+
+            else if (temp > 1) {
+                document.querySelector("#result").innerHTML = "its cold outside";
+            }
+
+            else {
+                document.querySelector("#result").innerHTML = "its freezing";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
